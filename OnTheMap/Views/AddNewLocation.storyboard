@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Location-->
+        <scene sceneID="fMF-Wq-aYF">
+            <objects>
+                <viewController storyboardIdentifier="sb_addNewLocation" id="uIe-UU-D5A" customClass="AddNewLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dro-H9-bDg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="5rL-RH-DLs">
+                                <rect key="frame" x="126" y="104" width="162" height="67"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-iK-Y4F">
+                                <rect key="frame" x="40" y="207" width="334" height="121"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6Q-4E-UgK">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="295" id="hcK-TW-N6U"/>
+                                            <constraint firstAttribute="height" constant="35" id="lBi-I6-soY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OcS-PM-ue1">
+                                        <rect key="frame" x="0.0" y="43" width="334" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="kNh-Li-yy4"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="295" id="yPr-zy-sre"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-Qt-35g">
+                                        <rect key="frame" x="0.0" y="86" width="334" height="35"/>
+                                        <color key="backgroundColor" red="0.296875" green="0.7062132955" blue="0.89626973870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="295" id="08P-Ye-8Xd"/>
+                                            <constraint firstAttribute="height" constant="35" id="Tcn-kU-EfD"/>
+                                        </constraints>
+                                        <state key="normal" title="FIND LOCATION">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="findLocation:" destination="uIe-UU-D5A" eventType="touchUpInside" id="nRh-f4-jSa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5rL-RH-DLs" firstAttribute="leading" secondItem="NuO-AF-dz3" secondAttribute="leading" constant="126" id="B92-Dh-mk5"/>
+                            <constraint firstItem="Fit-iK-Y4F" firstAttribute="top" secondItem="5rL-RH-DLs" secondAttribute="bottom" constant="36" id="EZK-ff-gM9"/>
+                            <constraint firstItem="5rL-RH-DLs" firstAttribute="top" secondItem="NuO-AF-dz3" secondAttribute="top" constant="16" id="QMa-Gu-7hA"/>
+                            <constraint firstItem="Fit-iK-Y4F" firstAttribute="leading" secondItem="NuO-AF-dz3" secondAttribute="leading" constant="40" id="mQc-4e-fmb"/>
+                            <constraint firstItem="NuO-AF-dz3" firstAttribute="trailing" secondItem="5rL-RH-DLs" secondAttribute="trailing" constant="126" id="pLm-0m-1XE"/>
+                            <constraint firstItem="NuO-AF-dz3" firstAttribute="trailing" secondItem="Fit-iK-Y4F" secondAttribute="trailing" constant="40" id="zEO-QC-6Kn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NuO-AF-dz3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="Vmi-s8-5al">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2E0-cL-GwK"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="locationEntryField" destination="P6Q-4E-UgK" id="lR2-14-lua"/>
+                        <outlet property="websiteEntryField" destination="OcS-PM-ue1" id="o9G-Un-B2P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVf-av-nSf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.9710144927537" y="-149.33035714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dqb-Xf-4l5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="emB-3Q-YMj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wIV-23-g2U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uIe-UU-D5A" kind="relationship" relationship="rootViewController" id="k2V-q4-nuS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9i2-4c-yMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="-149.33035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_world" width="52" height="67"/>
+    </resources>
+</document>

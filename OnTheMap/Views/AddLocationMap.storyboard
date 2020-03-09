@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Location-->
+        <scene sceneID="J5P-9x-KGn">
+            <objects>
+                <viewController storyboardIdentifier="sb_addLocationMap" id="5ID-cg-A0E" customClass="AddLocationMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5TJ-VA-ul1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N6P-Zz-j3k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wq9-gC-FxB">
+                                <rect key="frame" x="16" y="803" width="382" height="39"/>
+                                <color key="backgroundColor" red="0.296875" green="0.7062132955" blue="0.89626973870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="9Ep-ic-CRW"/>
+                                </constraints>
+                                <state key="normal" title="FINISH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishTapped:" destination="5ID-cg-A0E" eventType="touchUpInside" id="SyN-pj-PAn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5St-mP-o6N" firstAttribute="trailing" secondItem="Wq9-gC-FxB" secondAttribute="trailing" constant="16" id="4Up-jN-OId"/>
+                            <constraint firstItem="N6P-Zz-j3k" firstAttribute="trailing" secondItem="5St-mP-o6N" secondAttribute="trailing" id="9La-4I-dPU"/>
+                            <constraint firstItem="Wq9-gC-FxB" firstAttribute="leading" secondItem="5St-mP-o6N" secondAttribute="leading" constant="16" id="NLA-iy-hxS"/>
+                            <constraint firstItem="5St-mP-o6N" firstAttribute="bottom" secondItem="Wq9-gC-FxB" secondAttribute="bottom" constant="20" id="SCy-jG-Xhs"/>
+                            <constraint firstAttribute="bottom" secondItem="N6P-Zz-j3k" secondAttribute="bottom" id="Sex-Je-giq"/>
+                            <constraint firstItem="N6P-Zz-j3k" firstAttribute="top" secondItem="5St-mP-o6N" secondAttribute="top" id="m2V-c1-CUS"/>
+                            <constraint firstItem="N6P-Zz-j3k" firstAttribute="leading" secondItem="5St-mP-o6N" secondAttribute="leading" id="pfD-GX-a7s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5St-mP-o6N"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="dOa-VP-ecW"/>
+                    <connections>
+                        <outlet property="finishButton" destination="Wq9-gC-FxB" id="UDh-ou-sBi"/>
+                        <outlet property="mapView" destination="N6P-Zz-j3k" id="VQj-To-hMv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BxM-bO-YCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>

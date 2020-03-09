@@ -8,22 +8,62 @@
 
 /* Begin PBXBuildFile section */
 		CFAD709D24004A46005293A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD709C24004A46005293A7 /* AppDelegate.swift */; };
-		CFAD709F24004A46005293A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD709E24004A46005293A7 /* SceneDelegate.swift */; };
 		CFAD70A124004A46005293A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70A024004A46005293A7 /* ViewController.swift */; };
-		CFAD70A424004A46005293A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70A224004A46005293A7 /* Main.storyboard */; };
+		CFAD70A424004A46005293A7 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70A224004A46005293A7 /* LoginViewController.storyboard */; };
 		CFAD70A624004A47005293A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70A524004A47005293A7 /* Assets.xcassets */; };
 		CFAD70A924004A47005293A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70A724004A47005293A7 /* LaunchScreen.storyboard */; };
+		CFAD70B12401A502005293A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70B02401A502005293A7 /* LoginViewController.swift */; };
+		CFAD70B32401AA42005293A7 /* StudentLocationMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70B22401AA42005293A7 /* StudentLocationMap.storyboard */; };
+		CFAD70B724057DAF005293A7 /* StudentLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70B624057DAF005293A7 /* StudentLocationMapViewController.swift */; };
+		CFAD70B924057E36005293A7 /* StudentLocationTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70B824057E36005293A7 /* StudentLocationTable.storyboard */; };
+		CFAD70BB24057F38005293A7 /* StudentLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70BA24057F38005293A7 /* StudentLocationTableViewController.swift */; };
+		CFAD70BD2406EA0F005293A7 /* AddNewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70BC2406EA0F005293A7 /* AddNewLocationViewController.swift */; };
+		CFAD70BF2406EA2E005293A7 /* AddNewLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70BE2406EA2E005293A7 /* AddNewLocation.storyboard */; };
+		CFAD70C12406EE4A005293A7 /* AddLocationMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD70C02406EE4A005293A7 /* AddLocationMap.storyboard */; };
+		CFAD70C32406EE76005293A7 /* AddLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70C22406EE76005293A7 /* AddLocationMapViewController.swift */; };
+		CFAD70C8240A4FF6005293A7 /* OTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70C7240A4FF6005293A7 /* OTMClient.swift */; };
+		CFAD70CE240D93EA005293A7 /* StudentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70CD240D93EA005293A7 /* StudentResults.swift */; };
+		CFAD70D0240D96A2005293A7 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70CF240D96A2005293A7 /* LoginRequest.swift */; };
+		CFAD70D2240D9BD5005293A7 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70D1240D9BD5005293A7 /* SessionResponse.swift */; };
+		CFAD70D42410D726005293A7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70D32410D726005293A7 /* ErrorResponse.swift */; };
+		CFAD70D6241163E4005293A7 /* StudentLocationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70D5241163E4005293A7 /* StudentLocationTabBarController.swift */; };
+		CFAD70D82411649F005293A7 /* StoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70D72411649F005293A7 /* StoryboardFactory.swift */; };
+		CFAD70DC2411B463005293A7 /* OnTheMapCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70DB2411B463005293A7 /* OnTheMapCustomCell.swift */; };
+		CFAD70DE2414511C005293A7 /* OnTheMapBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70DD2414511C005293A7 /* OnTheMapBaseViewController.swift */; };
+		CFAD70E02414E25C005293A7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70DF2414E25C005293A7 /* UserData.swift */; };
+		CFAD70E224158FDD005293A7 /* StudentLocationPOSTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70E124158FDD005293A7 /* StudentLocationPOSTResponse.swift */; };
+		CFAD70E424160A00005293A7 /* StudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70E324160A00005293A7 /* StudentInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CFAD709924004A46005293A7 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAD709C24004A46005293A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFAD709E24004A46005293A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CFAD70A024004A46005293A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CFAD70A324004A46005293A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFAD70A324004A46005293A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginViewController.storyboard; sourceTree = "<group>"; };
 		CFAD70A524004A47005293A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFAD70A824004A47005293A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFAD70AA24004A47005293A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFAD70B02401A502005293A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CFAD70B22401AA42005293A7 /* StudentLocationMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentLocationMap.storyboard; sourceTree = "<group>"; };
+		CFAD70B624057DAF005293A7 /* StudentLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationMapViewController.swift; sourceTree = "<group>"; };
+		CFAD70B824057E36005293A7 /* StudentLocationTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentLocationTable.storyboard; sourceTree = "<group>"; };
+		CFAD70BA24057F38005293A7 /* StudentLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationTableViewController.swift; sourceTree = "<group>"; };
+		CFAD70BC2406EA0F005293A7 /* AddNewLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLocationViewController.swift; sourceTree = "<group>"; };
+		CFAD70BE2406EA2E005293A7 /* AddNewLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewLocation.storyboard; sourceTree = "<group>"; };
+		CFAD70C02406EE4A005293A7 /* AddLocationMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddLocationMap.storyboard; sourceTree = "<group>"; };
+		CFAD70C22406EE76005293A7 /* AddLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationMapViewController.swift; sourceTree = "<group>"; };
+		CFAD70C7240A4FF6005293A7 /* OTMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTMClient.swift; sourceTree = "<group>"; };
+		CFAD70CD240D93EA005293A7 /* StudentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResults.swift; sourceTree = "<group>"; };
+		CFAD70CF240D96A2005293A7 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		CFAD70D1240D9BD5005293A7 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		CFAD70D32410D726005293A7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CFAD70D5241163E4005293A7 /* StudentLocationTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationTabBarController.swift; sourceTree = "<group>"; };
+		CFAD70D72411649F005293A7 /* StoryboardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardFactory.swift; sourceTree = "<group>"; };
+		CFAD70DB2411B463005293A7 /* OnTheMapCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTheMapCustomCell.swift; sourceTree = "<group>"; };
+		CFAD70DD2414511C005293A7 /* OnTheMapBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapBaseViewController.swift; sourceTree = "<group>"; };
+		CFAD70DF2414E25C005293A7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		CFAD70E124158FDD005293A7 /* StudentLocationPOSTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationPOSTResponse.swift; sourceTree = "<group>"; };
+		CFAD70E324160A00005293A7 /* StudentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +80,7 @@
 		CFAD709024004A46005293A7 = {
 			isa = PBXGroup;
 			children = (
+				CFAD70E324160A00005293A7 /* StudentInfo.swift */,
 				CFAD709B24004A46005293A7 /* OnTheMap */,
 				CFAD709A24004A46005293A7 /* Products */,
 			);
@@ -57,14 +98,57 @@
 			isa = PBXGroup;
 			children = (
 				CFAD709C24004A46005293A7 /* AppDelegate.swift */,
-				CFAD709E24004A46005293A7 /* SceneDelegate.swift */,
 				CFAD70A024004A46005293A7 /* ViewController.swift */,
-				CFAD70A224004A46005293A7 /* Main.storyboard */,
-				CFAD70A524004A47005293A7 /* Assets.xcassets */,
-				CFAD70A724004A47005293A7 /* LaunchScreen.storyboard */,
+				CFAD70C42406EF5B005293A7 /* Views */,
+				CFAD70C62406EFC4005293A7 /* Assets */,
+				CFAD70C52406EF77005293A7 /* Controllers */,
 				CFAD70AA24004A47005293A7 /* Info.plist */,
+				CFAD70C7240A4FF6005293A7 /* OTMClient.swift */,
+				CFAD70CD240D93EA005293A7 /* StudentResults.swift */,
+				CFAD70CF240D96A2005293A7 /* LoginRequest.swift */,
+				CFAD70D1240D9BD5005293A7 /* SessionResponse.swift */,
+				CFAD70D32410D726005293A7 /* ErrorResponse.swift */,
+				CFAD70D72411649F005293A7 /* StoryboardFactory.swift */,
+				CFAD70DD2414511C005293A7 /* OnTheMapBaseViewController.swift */,
+				CFAD70DF2414E25C005293A7 /* UserData.swift */,
+				CFAD70E124158FDD005293A7 /* StudentLocationPOSTResponse.swift */,
 			);
 			path = OnTheMap;
+			sourceTree = "<group>";
+		};
+		CFAD70C42406EF5B005293A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD70A224004A46005293A7 /* LoginViewController.storyboard */,
+				CFAD70B22401AA42005293A7 /* StudentLocationMap.storyboard */,
+				CFAD70B824057E36005293A7 /* StudentLocationTable.storyboard */,
+				CFAD70BE2406EA2E005293A7 /* AddNewLocation.storyboard */,
+				CFAD70C02406EE4A005293A7 /* AddLocationMap.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CFAD70C52406EF77005293A7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD70DB2411B463005293A7 /* OnTheMapCustomCell.swift */,
+				CFAD70B02401A502005293A7 /* LoginViewController.swift */,
+				CFAD70B624057DAF005293A7 /* StudentLocationMapViewController.swift */,
+				CFAD70BA24057F38005293A7 /* StudentLocationTableViewController.swift */,
+				CFAD70D5241163E4005293A7 /* StudentLocationTabBarController.swift */,
+				CFAD70BC2406EA0F005293A7 /* AddNewLocationViewController.swift */,
+				CFAD70C22406EE76005293A7 /* AddLocationMapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFAD70C62406EFC4005293A7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD70A524004A47005293A7 /* Assets.xcassets */,
+				CFAD70A724004A47005293A7 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +211,11 @@
 			files = (
 				CFAD70A924004A47005293A7 /* LaunchScreen.storyboard in Resources */,
 				CFAD70A624004A47005293A7 /* Assets.xcassets in Resources */,
-				CFAD70A424004A46005293A7 /* Main.storyboard in Resources */,
+				CFAD70BF2406EA2E005293A7 /* AddNewLocation.storyboard in Resources */,
+				CFAD70B32401AA42005293A7 /* StudentLocationMap.storyboard in Resources */,
+				CFAD70A424004A46005293A7 /* LoginViewController.storyboard in Resources */,
+				CFAD70C12406EE4A005293A7 /* AddLocationMap.storyboard in Resources */,
+				CFAD70B924057E36005293A7 /* StudentLocationTable.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,21 +226,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFAD70BB24057F38005293A7 /* StudentLocationTableViewController.swift in Sources */,
+				CFAD70CE240D93EA005293A7 /* StudentResults.swift in Sources */,
+				CFAD70DE2414511C005293A7 /* OnTheMapBaseViewController.swift in Sources */,
+				CFAD70DC2411B463005293A7 /* OnTheMapCustomCell.swift in Sources */,
+				CFAD70C8240A4FF6005293A7 /* OTMClient.swift in Sources */,
+				CFAD70D42410D726005293A7 /* ErrorResponse.swift in Sources */,
+				CFAD70D6241163E4005293A7 /* StudentLocationTabBarController.swift in Sources */,
+				CFAD70D2240D9BD5005293A7 /* SessionResponse.swift in Sources */,
+				CFAD70D0240D96A2005293A7 /* LoginRequest.swift in Sources */,
+				CFAD70D82411649F005293A7 /* StoryboardFactory.swift in Sources */,
+				CFAD70B12401A502005293A7 /* LoginViewController.swift in Sources */,
 				CFAD70A124004A46005293A7 /* ViewController.swift in Sources */,
+				CFAD70BD2406EA0F005293A7 /* AddNewLocationViewController.swift in Sources */,
+				CFAD70E02414E25C005293A7 /* UserData.swift in Sources */,
+				CFAD70C32406EE76005293A7 /* AddLocationMapViewController.swift in Sources */,
+				CFAD70E224158FDD005293A7 /* StudentLocationPOSTResponse.swift in Sources */,
 				CFAD709D24004A46005293A7 /* AppDelegate.swift in Sources */,
-				CFAD709F24004A46005293A7 /* SceneDelegate.swift in Sources */,
+				CFAD70E424160A00005293A7 /* StudentInfo.swift in Sources */,
+				CFAD70B724057DAF005293A7 /* StudentLocationMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CFAD70A224004A46005293A7 /* Main.storyboard */ = {
+		CFAD70A224004A46005293A7 /* LoginViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CFAD70A324004A46005293A7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = LoginViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		CFAD70A724004A47005293A7 /* LaunchScreen.storyboard */ = {
