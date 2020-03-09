@@ -15,9 +15,12 @@ class OnTheMapBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.shared.delegate as? AppDelegate
+        loadData()
     }
     
     @IBAction func reloadButtonTapped(_ sender: Any) {
+        
+        loadData()
     }
     @IBAction func addStudentTapped(_ sender: Any) {
         
@@ -27,4 +30,7 @@ class OnTheMapBaseViewController: UIViewController {
         self.present(addStudentNavigationController, animated: true, completion: nil)
     }
 
+    func loadData() {
+        fatalError("\(#function) was not implemented")
+    }
 }

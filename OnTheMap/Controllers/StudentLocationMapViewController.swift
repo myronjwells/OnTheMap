@@ -21,11 +21,12 @@ class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loadData()
+        //loadData()
     }
     
     
-    func loadData() {
+   override func loadData() {
+    print("Test")
     _ = OTMClient.getStudentLocations() { studentLocationResults, error in
                
                if let studentLocations = studentLocationResults?.results {

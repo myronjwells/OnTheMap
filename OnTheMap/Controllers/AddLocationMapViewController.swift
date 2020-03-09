@@ -49,7 +49,9 @@ class AddLocationMapViewController: OnTheMapBaseViewController {
     
         OTMClient.postNewStudentLocations(studentInfo: newStudent) { response, error in
             if let response = response {
-                self.navigationController?.popViewController(animated: true)
+
+                self.navigationController?.dismiss(animated: true)
+                
             } else {
                 print("Alert: There was an issue with saving this student. Please go over the information and try again.")
             }

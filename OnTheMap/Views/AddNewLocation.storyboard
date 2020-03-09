@@ -68,7 +68,11 @@
                         <viewLayoutGuide key="safeArea" id="NuO-AF-dz3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="Vmi-s8-5al">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2E0-cL-GwK"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2E0-cL-GwK">
+                            <connections>
+                                <action selector="cancel:" destination="uIe-UU-D5A" id="QY8-5P-0Lb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="locationEntryField" destination="P6Q-4E-UgK" id="lR2-14-lua"/>

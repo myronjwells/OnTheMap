@@ -9,21 +9,25 @@
 import UIKit
 import MapKit
 
-class AddNewLocationViewController: OnTheMapBaseViewController {
+class AddNewLocationViewController: UIViewController {
     
     @IBOutlet weak var locationEntryField: UITextField!
     @IBOutlet weak var websiteEntryField: UITextField!
+    var appDelegate: AppDelegate!
     var userData = UserData(lastName: "", firstName: "")
     
     
     var mapController: AddLocationMapViewController = AddLocationMapViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
         mapController = StoryboardFactory.addLocationMapViewController()!
         
     }
     
+    @IBAction func cancel(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true)
+    }
     @IBAction func findLocation(_ sender: Any) {
         
         _ = OTMClient.getUserData() { userData, error in

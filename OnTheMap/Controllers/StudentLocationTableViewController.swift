@@ -17,11 +17,24 @@ class StudentLocationTableViewController: OnTheMapBaseViewController, UITableVie
          super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.reloadData()
-        
-        self.studentLocations = self.appDelegate.studentLocations
+        //self.tableView.reloadData()
+
      }
     
+    override func loadData() {
+        _ = OTMClient.getStudentLocations() { studentLocationResults, error in
+            
+            if let studentLocations = studentLocationResults?.results {
+                print("Wao")
+                //Persist the results in the appDelegates Structure for future use
+                self.appDelegate.studentLocations = studentLocations
+                self.studentLocations = self.appDelegate.studentLocations
+                self.tableView.reloadData()
+            }
+        }
+        
+        
+    }
     
     // MARK: - Table view data source
 
