@@ -45,10 +45,14 @@ class AddLocationMapViewController: OnTheMapBaseViewController {
     
     @IBAction func finishTapped(_ sender: Any) {
         
-        var newStudent = createStudentWithCoords(coordinate: coordinate)
+        let newStudent = createStudentWithCoords(coordinate: coordinate)
     
         OTMClient.postNewStudentLocations(studentInfo: newStudent) { response, error in
-            var test = response
+            if let response = response {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                print("Alert: There was an issue with saving this student. Please go over the information and try again.")
+            }
         }
         //
         //        //PUT data to Student Location array
@@ -68,11 +72,14 @@ class AddLocationMapViewController: OnTheMapBaseViewController {
         var studentInfo =  StudentInfo()
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         
+        
         lookUpLocation(location: location) { placeMark in
-           DispatchQueue.main.async {
+           
+            //This is returning an empty string. Need to figure it out
               studentInfo.mapString = getCityNameCountryString(placeMark: placeMark)
-            }
+            
         }
+                studentInfo.uniqueKey = OTMClient.Auth.accountKey
                 studentInfo.firstName = self.appDelegate.userData!.firstName
                 studentInfo.lastName = self.appDelegate.userData!.lastName
                 studentInfo.latitude = coordinate.latitude

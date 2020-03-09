@@ -16,19 +16,26 @@ class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDel
     var studentLocations: [StudentLocation] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        _ = OTMClient.getStudentLocations() { studentLocationResults, error in
-            
-            if let studentLocations = studentLocationResults?.results {
-                //Persist the results in the appDelegates Structure for future use
-                self.appDelegate.studentLocations = studentLocations
-                self.studentLocations = self.appDelegate.studentLocations
-            }
-            self.generateMapAnnotationsFromStudentLocations(self.studentLocations)
-        }
-        
-        
-        // Do any additional setup after loading the view.
+       //loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
+    }
+    
+    
+    func loadData() {
+    _ = OTMClient.getStudentLocations() { studentLocationResults, error in
+               
+               if let studentLocations = studentLocationResults?.results {
+                   //Persist the results in the appDelegates Structure for future use
+                   self.appDelegate.studentLocations = studentLocations
+                   self.studentLocations = self.appDelegate.studentLocations
+               }
+               self.generateMapAnnotationsFromStudentLocations(self.studentLocations)
+           }
+           
     }
     
     func generateMapAnnotationsFromStudentLocations(_ locations: [StudentLocation]) {
