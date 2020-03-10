@@ -53,12 +53,19 @@
                                             <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d4w-gT-cOO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msp-Yn-L44">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-Ek-CoW">
                                         <rect key="frame" x="0.0" y="129" width="334" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content=" Don't have an account? Sign Up">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="ArialMT"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -78,6 +85,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Las-yU-8Xx" id="n8q-88-Jly"/>
                         <outlet property="passwordTextField" destination="yDv-dQ-JEE" id="p3u-xd-4Vs"/>
+                        <outlet property="signUpTextView" destination="pJT-Ek-CoW" id="3of-R4-UMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

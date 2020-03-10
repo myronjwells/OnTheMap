@@ -1,5 +1,5 @@
 //
-//  StudentLocation.swift
+//  StudentResponse.swift
 //  OnTheMap
 //
 //  Created by Myron Wells on 3/2/20.
@@ -11,10 +11,10 @@ import Foundation
 
 
 struct StudentLocationResults:Codable {
-    let results: [StudentLocation]
+    let results: [StudentInformation]
 }
 
-struct StudentLocation:Codable {
+struct StudentInformation:Codable {
     
     let objectId: String
     var uniqueKey: String?

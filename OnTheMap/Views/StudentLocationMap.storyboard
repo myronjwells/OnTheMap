@@ -32,7 +32,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="On the Map" id="3C8-5T-KAD">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="D68-W6-k5R"/>
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="yLM-xc-say"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="yLM-xc-say">
+                            <connections>
+                                <action selector="logout:" destination="YI5-Nl-oAE" id="oFG-6m-iBD"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="F8Y-Qe-gIo">
                                 <connections>

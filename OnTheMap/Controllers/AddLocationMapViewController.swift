@@ -9,18 +9,44 @@
 import UIKit
 import MapKit
 
-class AddLocationMapViewController: OnTheMapBaseViewController {
+class AddLocationMapViewController: UIViewController {
+    // MARK: Fields
+    
     var locationData : MKLocalSearch.Response?
     var websiteURLString: String = ""
     var coordinate : CLLocationCoordinate2D!
+    var appDelegate: AppDelegate!
+    var newStudentInfo =  StudentInfo()
+    
+    // MARK: Storyboard Outlets
+    
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
+    // MARK: Storyboard Button Actions
+    
+    @IBAction func finishTapped(_ sender: Any) {
+        self.showSpinner(onView: self.view)
+        OTMClient.postNewStudentLocations(studentInfo: newStudentInfo) { response, error in
+            if response != nil {
+                self.removeSpinner()
+                self.navigationController?.dismiss(animated: true)
+                
+            } else {
+                self.showAlert(title: "Student Edit Failed", message: error?.localizedDescription ?? "There was an issue. Please go over the provided data and try again.")
+            }
+        }
+    }
+    
+    // MARK: UIViewController LifeCycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
         setUp()
+        createStudentWithCoords(coordinate: coordinate)
     }
+    // MARK: Helper Methods
     
     func setUp() {
         
@@ -40,100 +66,93 @@ class AddLocationMapViewController: OnTheMapBaseViewController {
         let span = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         self.mapView.setRegion(region, animated: true)
-
+        
     }
     
-    @IBAction func finishTapped(_ sender: Any) {
-        
-        let newStudent = createStudentWithCoords(coordinate: coordinate)
     
-        OTMClient.postNewStudentLocations(studentInfo: newStudent) { response, error in
-            if let response = response {
-
-                self.navigationController?.dismiss(animated: true)
-                
-            } else {
-                print("Alert: There was an issue with saving this student. Please go over the information and try again.")
-            }
-        }
-        //
-        //        //PUT data to Student Location array
-        //
-        //          //add the variables needed in the StudentLocation.swift file at the top and then pass inside the AddStudentLocation struct created
-        //
-        //          AddStudentLocation.init(studentLocation: ["uniqueKey":"12345678", "firstName":"Aapple","lastName":"Doe","mapString":"Mountain View, CA", "mediaURL":"https://udacity.com","latitude": 37.386052,"longitude": -122.083851]).execute(
-        //
-        //              onSuccess: { (hs: StudentLocation) in
-        //                //move pages back to map
-        //          },
-        //              onError: { (error: Error) in error.printDescription()}
-        //          )
+    func createStudentWithCoords(coordinate: CLLocationCoordinate2D) {
+        getStudentMapString(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        newStudentInfo.uniqueKey = OTMClient.Auth.accountKey
+        newStudentInfo.firstName = self.appDelegate.userData!.firstName
+        newStudentInfo.lastName = self.appDelegate.userData!.lastName
+        newStudentInfo.latitude = coordinate.latitude
+        newStudentInfo.longitude = coordinate.longitude
+        newStudentInfo.mediaURL = websiteURLString
     }
     
-    func createStudentWithCoords(coordinate: CLLocationCoordinate2D) -> StudentInfo {
-        var studentInfo =  StudentInfo()
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        
-        
-        lookUpLocation(location: location) { placeMark in
-           
-            //This is returning an empty string. Need to figure it out
-              studentInfo.mapString = getCityNameCountryString(placeMark: placeMark)
+    
+    func getStudentMapString(latitude:Double,longitude:Double) {
+
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        var mapString = ""
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placemarks?[0]
+
+             // City
+               if let city = placeMark.locality {
+                   mapString += "\(city), "
+               }
+               // State
+               if let state = placeMark.administrativeArea {
+                   mapString += "\(state), "
+               }
+               
+               // Country
+               if let country = placeMark.country {
+                   mapString += country
+               }
             
-        }
-                studentInfo.uniqueKey = OTMClient.Auth.accountKey
-                studentInfo.firstName = self.appDelegate.userData!.firstName
-                studentInfo.lastName = self.appDelegate.userData!.lastName
-                studentInfo.latitude = coordinate.latitude
-                studentInfo.longitude = coordinate.longitude
-                studentInfo.mediaURL = websiteURLString
-    
-        return studentInfo
+            self.newStudentInfo.mapString = mapString
+        
+        })
     }
     
     
     func lookUpLocation(location: CLLocation, completionHandler: @escaping (CLPlacemark?)
-                    -> Void ) {
-
-            let geocoder = CLGeocoder()
-                
-            // Look up the location and pass it to the completion handler
-            geocoder.reverseGeocodeLocation(location,
-                        completionHandler: { (placemarks, error) in
-                if error == nil {
-                    let placemark = placemarks?.first
-                    completionHandler(placemark)
-                }
-                else {
-                 // An error occurred during geocoding.
-                    completionHandler(nil)
-                }
-            })
-        }
-
+        -> Void ) {
+        
+        let geocoder = CLGeocoder()
+        
+        // Look up the location and pass it to the completion handler
+        geocoder.reverseGeocodeLocation(location,
+                                        completionHandler: { (placemarks, error) in
+                                            if error == nil {
+                                                let placemark = placemarks?.first
+                                                completionHandler(placemark)
+                                            }
+                                            else {
+                                                completionHandler(nil)
+                                            }
+        })
     }
     
-    func getCityNameCountryString(placeMark: CLPlacemark?) -> String {
-        
-                var fullCityStateCountryString = ""
-                
-                // Place details
-                guard let placeMark = placeMark else { return "" }
-                
-                // City
-                if let city = placeMark.locality {
-                    fullCityStateCountryString += "\(city), "
-                }
-                // State
-                if let state = placeMark.administrativeArea {
-                    fullCityStateCountryString += "\(state), "
-                }
-        
-                // Country
-                if let country = placeMark.country {
-                    fullCityStateCountryString += country
-                }
-        
-        return fullCityStateCountryString
+}
+
+func getCityNameCountryString(placeMark: CLPlacemark?) -> String {
+    
+    var fullCityStateCountryString = ""
+    
+    // Place details
+    guard let placeMark = placeMark else { return "" }
+    
+    // City
+    if let city = placeMark.locality {
+        fullCityStateCountryString += "\(city), "
     }
+    // State
+    if let state = placeMark.administrativeArea {
+        fullCityStateCountryString += "\(state), "
+    }
+    
+    // Country
+    if let country = placeMark.country {
+        fullCityStateCountryString += country
+    }
+    
+    return fullCityStateCountryString
+}
 

@@ -11,9 +11,13 @@ import MapKit
 
 class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDelegate {
     
-    
+    // MARK: Fields
+     var studentInformation: [StudentInformation] = []
     @IBOutlet weak var mapView: MKMapView!
-    var studentLocations: [StudentLocation] = []
+   
+    
+    // MARK: UIViewController LifeCycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        //loadData()
@@ -24,22 +28,27 @@ class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDel
         //loadData()
     }
     
-    
+   //MARK: Helper Methods
    override func loadData() {
-    print("Test")
-    _ = OTMClient.getStudentLocations() { studentLocationResults, error in
+    self.showSpinner(onView: self.view)
+    _ = OTMClient.getStudentInformation() { studentLocationResults, error in
                
-               if let studentLocations = studentLocationResults?.results {
+               if let studentInformation = studentLocationResults?.results {
                    //Persist the results in the appDelegates Structure for future use
-                   self.appDelegate.studentLocations = studentLocations
-                   self.studentLocations = self.appDelegate.studentLocations
-               }
-               self.generateMapAnnotationsFromStudentLocations(self.studentLocations)
+                   self.appDelegate.studentInformation = studentInformation
+                   self.studentInformation = self.appDelegate.studentInformation
+                   self.generateMapAnnotationsFromStudentLocations(self.studentInformation)
+                
+                self.removeSpinner()
+               } else {
+                print(error?.localizedDescription ?? "Could not retrieve student list data. Please try again.")
+            }
+              
            }
            
     }
     
-    func generateMapAnnotationsFromStudentLocations(_ locations: [StudentLocation]) {
+    func generateMapAnnotationsFromStudentLocations(_ locations: [StudentInformation]) {
         //clear out annotations
         mapView.removeAnnotations(mapView.annotations)
         
@@ -67,6 +76,8 @@ class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDel
         
     }
     
+    //MARK: MKMapView Delegate Methods
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let reuseId = "pin"
@@ -86,7 +97,6 @@ class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDel
         return pinView
     }
     
-    
     // This delegate method is implemented to respond to taps. It opens the system browser
     // to the URL specified in the annotationViews subtitle property.
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -101,7 +111,5 @@ class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDel
             
         }
     }
-    
-    
     
 }

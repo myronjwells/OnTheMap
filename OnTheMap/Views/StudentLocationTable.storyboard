@@ -60,7 +60,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="On the Map" id="fQl-ud-IZD">
                         <barButtonItem key="backBarButtonItem" title="CANCEL" id="The-Yj-VzV"/>
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="7xQ-3j-KMz"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="7xQ-3j-KMz">
+                            <connections>
+                                <action selector="logout:" destination="blv-b2-qsA" id="Vao-yW-bMA"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="Ft3-qq-aJA">
                                 <connections>

@@ -12,11 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var sessionID: String? = nil
-    var accountKey: String? = nil
     var userData: UserData? = nil
-    
-    var studentLocations = [StudentLocation]()
+    var studentInformation = [StudentInformation]()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
