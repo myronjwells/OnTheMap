@@ -55,7 +55,7 @@ class AddLocationMapViewController: UIViewController {
         
         //Create annotation
         let annotation = MKPointAnnotation()
-        let fullname = "\(self.appDelegate.userData!.firstName) \(self.appDelegate.userData!.lastName)"
+        let fullname = "\(User.shared.data.firstName) \(User.shared.data.lastName)"
         annotation.title = fullname
         annotation.subtitle = websiteURLString
         annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
@@ -73,8 +73,8 @@ class AddLocationMapViewController: UIViewController {
     func createStudentWithCoords(coordinate: CLLocationCoordinate2D) {
         getStudentMapString(latitude: coordinate.latitude, longitude: coordinate.longitude)
         newStudentInfo.uniqueKey = OTMClient.Auth.accountKey
-        newStudentInfo.firstName = self.appDelegate.userData!.firstName
-        newStudentInfo.lastName = self.appDelegate.userData!.lastName
+        newStudentInfo.firstName = User.shared.data.firstName
+        newStudentInfo.lastName = User.shared.data.lastName
         newStudentInfo.latitude = coordinate.latitude
         newStudentInfo.longitude = coordinate.longitude
         newStudentInfo.mediaURL = websiteURLString

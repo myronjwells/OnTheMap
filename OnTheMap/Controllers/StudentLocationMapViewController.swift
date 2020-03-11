@@ -12,36 +12,25 @@ import MapKit
 class StudentLocationMapViewController: OnTheMapBaseViewController, MKMapViewDelegate {
     
     // MARK: Fields
-     var studentInformation: [StudentInformation] = []
+    
     @IBOutlet weak var mapView: MKMapView!
    
-    
-    // MARK: UIViewController LifeCycle Methods
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       //loadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        //loadData()
-    }
-    
    //MARK: Helper Methods
    override func loadData() {
     self.showSpinner(onView: self.view)
     _ = OTMClient.getStudentInformation() { studentLocationResults, error in
-               
+        
+               self.removeSpinner()
                if let studentInformation = studentLocationResults?.results {
-                   //Persist the results in the appDelegates Structure for future use
-                   self.appDelegate.studentInformation = studentInformation
-                   self.studentInformation = self.appDelegate.studentInformation
-                   self.generateMapAnnotationsFromStudentLocations(self.studentInformation)
-                
-                self.removeSpinner()
+                   //Persist the results in the Students Model for future use
+                   Students.shared.results = studentInformation
+                   self.generateMapAnnotationsFromStudentLocations(Students.shared.results)
+
                } else {
-                print(error?.localizedDescription ?? "Could not retrieve student list data. Please try again.")
+                
+                self.showAlert(title: "Error", message: "Could not retrieve student list data.")
+                debugPrint(error?.localizedDescription as Any)
+                
             }
               
            }

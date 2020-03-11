@@ -29,12 +29,15 @@
 		CFAD70D82411649F005293A7 /* StoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70D72411649F005293A7 /* StoryboardFactory.swift */; };
 		CFAD70DC2411B463005293A7 /* OnTheMapCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70DB2411B463005293A7 /* OnTheMapCustomCell.swift */; };
 		CFAD70DE2414511C005293A7 /* OnTheMapBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70DD2414511C005293A7 /* OnTheMapBaseViewController.swift */; };
-		CFAD70E02414E25C005293A7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70DF2414E25C005293A7 /* UserData.swift */; };
+		CFAD70E02414E25C005293A7 /* UserDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70DF2414E25C005293A7 /* UserDataResponse.swift */; };
 		CFAD70E224158FDD005293A7 /* StudentLocationPOSTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70E124158FDD005293A7 /* StudentLocationPOSTResponse.swift */; };
 		CFAD70E424160A00005293A7 /* StudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70E324160A00005293A7 /* StudentInfo.swift */; };
 		CFAD70E624179C9A005293A7 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70E524179C9A005293A7 /* UIExtensions.swift */; };
 		CFAD70E82417BC49005293A7 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70E72417BC49005293A7 /* LogoutRequest.swift */; };
 		CFAD70EA2417BE86005293A7 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70E92417BE86005293A7 /* LogoutResponse.swift */; };
+		CFAD70F02419658D005293A7 /* StudentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70EF2419658D005293A7 /* StudentsModel.swift */; };
+		CFAD70F224196C6D005293A7 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70F124196C6D005293A7 /* UserDataModel.swift */; };
+		CFAD70F42419714B005293A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD70F32419714B005293A7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,12 +65,15 @@
 		CFAD70D72411649F005293A7 /* StoryboardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardFactory.swift; sourceTree = "<group>"; };
 		CFAD70DB2411B463005293A7 /* OnTheMapCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTheMapCustomCell.swift; sourceTree = "<group>"; };
 		CFAD70DD2414511C005293A7 /* OnTheMapBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapBaseViewController.swift; sourceTree = "<group>"; };
-		CFAD70DF2414E25C005293A7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		CFAD70DF2414E25C005293A7 /* UserDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataResponse.swift; sourceTree = "<group>"; };
 		CFAD70E124158FDD005293A7 /* StudentLocationPOSTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationPOSTResponse.swift; sourceTree = "<group>"; };
 		CFAD70E324160A00005293A7 /* StudentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfo.swift; sourceTree = "<group>"; };
 		CFAD70E524179C9A005293A7 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		CFAD70E72417BC49005293A7 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		CFAD70E92417BE86005293A7 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
+		CFAD70EF2419658D005293A7 /* StudentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsModel.swift; sourceTree = "<group>"; };
+		CFAD70F124196C6D005293A7 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		CFAD70F32419714B005293A7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,9 +159,10 @@
 			children = (
 				CFAD70EC2417D722005293A7 /* Response */,
 				CFAD70E324160A00005293A7 /* StudentInfo.swift */,
-				CFAD70DF2414E25C005293A7 /* UserData.swift */,
+				CFAD70EF2419658D005293A7 /* StudentsModel.swift */,
 				CFAD70CF240D96A2005293A7 /* LoginRequest.swift */,
 				CFAD70E72417BC49005293A7 /* LogoutRequest.swift */,
+				CFAD70F124196C6D005293A7 /* UserDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 		CFAD70EC2417D722005293A7 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				CFAD70DF2414E25C005293A7 /* UserDataResponse.swift */,
 				CFAD70CD240D93EA005293A7 /* StudentResponse.swift */,
 				CFAD70D1240D9BD5005293A7 /* SessionResponse.swift */,
 				CFAD70D32410D726005293A7 /* ErrorResponse.swift */,
@@ -176,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				CFAD70C7240A4FF6005293A7 /* OTMClient.swift */,
+				CFAD70F32419714B005293A7 /* Constants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -278,13 +287,16 @@
 				CFAD70D82411649F005293A7 /* StoryboardFactory.swift in Sources */,
 				CFAD70B12401A502005293A7 /* LoginViewController.swift in Sources */,
 				CFAD70E624179C9A005293A7 /* UIExtensions.swift in Sources */,
+				CFAD70F224196C6D005293A7 /* UserDataModel.swift in Sources */,
 				CFAD70BD2406EA0F005293A7 /* AddNewLocationViewController.swift in Sources */,
-				CFAD70E02414E25C005293A7 /* UserData.swift in Sources */,
+				CFAD70E02414E25C005293A7 /* UserDataResponse.swift in Sources */,
 				CFAD70C32406EE76005293A7 /* AddLocationMapViewController.swift in Sources */,
 				CFAD70E224158FDD005293A7 /* StudentLocationPOSTResponse.swift in Sources */,
 				CFAD709D24004A46005293A7 /* AppDelegate.swift in Sources */,
+				CFAD70F02419658D005293A7 /* StudentsModel.swift in Sources */,
 				CFAD70E424160A00005293A7 /* StudentInfo.swift in Sources */,
 				CFAD70B724057DAF005293A7 /* StudentLocationMapViewController.swift in Sources */,
+				CFAD70F42419714B005293A7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

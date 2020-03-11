@@ -1,5 +1,5 @@
 //
-//  UserData.swift
+//  UserDataResponse.swift
 //  OnTheMap
 //
 //  Created by Myron Wells on 3/8/20.

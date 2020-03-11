@@ -10,9 +10,7 @@ import UIKit
 import MapKit
 
 class AddNewLocationViewController: UIViewController {
-    
-    var appDelegate: AppDelegate!
-    var userData = UserData(lastName: "", firstName: "")
+
     var mapController: AddLocationMapViewController = AddLocationMapViewController()
     //MARK: Storyboard Outlets
     
@@ -23,7 +21,6 @@ class AddNewLocationViewController: UIViewController {
     // MARK: UIViewController LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate = UIApplication.shared.delegate as? AppDelegate
         mapController = StoryboardFactory.addLocationMapViewController()!
         
     }
@@ -34,11 +31,12 @@ class AddNewLocationViewController: UIViewController {
     }
     @IBAction func findLocation(_ sender: Any) {
         
+        showSpinner(onView: self.view)
         _ = OTMClient.getUserData() { userData, error in
             
+            self.removeSpinner()
             if let userData = userData {
-                self.appDelegate.userData = userData
-                self.userData = userData
+                User.shared.data = userData
             } else {
                 self.showAlert(title: "Error", message: error?.localizedDescription ?? "An error has occured with retrieving user data. Please try again.")
             }
@@ -69,7 +67,9 @@ class AddNewLocationViewController: UIViewController {
             searchRequest.naturalLanguageQuery = locationEntered
             
             let activeSearch = MKLocalSearch(request: searchRequest)
+            showSpinner(onView: self.view)
             activeSearch.start { (response, error) in
+                self.removeSpinner()
                 if response == nil
                 {
                     self.showAlert(title: "Error", message: "Could not Geocode the string. Please provide a different location")

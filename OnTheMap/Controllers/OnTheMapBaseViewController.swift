@@ -42,7 +42,7 @@ class OnTheMapBaseViewController: UIViewController {
         
         if success {
             //Logged Out
-            print("Logging Out...")
+            debugPrint("Logging Out...")
             let logInVC = StoryboardFactory.loginViewController()
             logInVC?.modalPresentationStyle = .fullScreen
             self.dismiss(animated: true, completion: nil)

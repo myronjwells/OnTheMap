@@ -12,9 +12,6 @@ class StudentLocationTableViewController: OnTheMapBaseViewController, UITableVie
     
     // MARK: Fields
     @IBOutlet var tableView: UITableView!
-    var studentInformation: [StudentInformation] = []
-    
-    
     // MARK: UIViewController LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +27,7 @@ class StudentLocationTableViewController: OnTheMapBaseViewController, UITableVie
             
             if let studentInformation = studentLocationResults?.results {
                 //Persist the results in the appDelegates Structure for future use
-                self.appDelegate.studentInformation = studentInformation
-                self.studentInformation = self.appDelegate.studentInformation
+                Students.shared.results = studentInformation
                 self.tableView.reloadData()
                 self.removeSpinner()
             }
@@ -40,19 +36,16 @@ class StudentLocationTableViewController: OnTheMapBaseViewController, UITableVie
     }
     
     // MARK: - TableView Data Source Methods
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.studentInformation.count
+        return Students.shared.results.count
     }
     
     //Create custom cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OnTheMapCell") as! OnTheMapCustomCell
         
-        let student = self.studentInformation[indexPath.row]
+        let student = Students.shared.results[indexPath.row]
         
         let firstName = student.firstName
         let lastName = student.lastName
@@ -75,7 +68,7 @@ class StudentLocationTableViewController: OnTheMapBaseViewController, UITableVie
     //Handle Selection on tap to redirect to provided url
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let urlString = self.studentInformation[indexPath.row].mediaURL {
+        if let urlString = Students.shared.results[indexPath.row].mediaURL {
             guard let url =  URL(string: urlString) else {
                 return
             }
